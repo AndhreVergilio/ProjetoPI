@@ -1,4 +1,4 @@
-Para rodar o servidor é preciso instalar o python e o Django, recomendo usarem uma venv de python para instalarem as dependencias dp django e outras bibliotecas
+Para rodar o servidor é preciso instalar o python e o Django, recomendo usarem uma venv de python para instalarem as dependencias do django e outras bibliotecas
 
 1 - baixe o arquivo chamado projeto_integrador e coloque em uma pasta de facil acesso, eu recomendo colocar direto no desktop
 
