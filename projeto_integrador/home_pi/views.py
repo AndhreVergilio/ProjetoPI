@@ -22,4 +22,4 @@ def home (request):
             temp.Descricao = request.POST.get('Descricao', 'None')
             temp.save()
 
-    return HttpResponse(template.render())
+    return HttpResponse(template.render()) 
