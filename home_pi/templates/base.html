@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %} {# LOADER DO JINJA NECESSARIO PARA IMPORTAR ARQUIVOS STATICOS PARA HTML EM DJANGO #}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="{% static 'css/Stylesheet.css' %}">
+    <title>Projeto Integrador</title>
+</head>
+<body>
+    <!-- cabeçalho com logo e guia "home" "sobre" "history"-->
+     <header style='background-image: img ; background-repeat: no-repeat; background-size: cover;'> {# O IMPORT DA IMAGEM DE FUNDO PRECISA SER MODIFICADA PARA FUNCIONAR COM O JINJA #}
+        <!-- Menu da página-->
+        <div class="menu">
+            <nav>
+                <!-- Logotipo ao clicar, redireciona para página principal-->
+                <a href="http://127.0.0.1:8000/">
+                    <img src="{% static 'img/img_logo.png' %}" alt="Logo" width="130px" height="120px">
+                </a>
+                <!-- Título atalho para outra página-->
+                <ul class="ul">
+                    <!--<a href="index.html" >Home</a>
+                    <a href="sobre.html">Home</a>
+                    <<a href="historia.html">História</a>-->
+                </ul>
+            </nav>
+            <section class="Frase Sejam Bem-vindos!">
+                <div class="Frase">
+                    <h1>Olá! Sejam bem vindos!</h1>
+                    <p>Para realizar sua denúncia, preencha os campos abaixo.</p>
+                </div>
+            </section>
+            <section class="formulario">
+                <div>
+                    <form action="{% url 'home' %}" method="post" enctype='multipart/form-data'>
+                        <label for="Nome">Nome:</label>
+                        <input type="text" id="Nome" name="Nome" required>
+                        <br><br>
+                        <div>
+                            <label for="Localizacao">Localização:</label>
+                            <input type="text" id="Localizacao" name="Localizacao" required>
+                            <br><br>
+                        </div>
+                        <span>Tipo de Lixo:</span>
+                                <input type="radio" id="Construcao_ID" name="Opcao" value="Construcao_Value" required><label for="Construcao">Construção</label>
+                                <input type="radio" id="Domestico_ID" name="Opcao" value="Domestico_Value" required><label for="Domestico">Doméstico</label>
+                                <input type="radio" id="Entulho" name="Opcao" value="Entulho_Value" required><label for="Domestico">Entulho</label>
+                                <input type="radio" id="Outros_ID" name="Opcao" value="Outros_Value" required><label for="Domestico">Outros</label>
+                                <br><br>
+                        <label for="Descricao">Descrição da Situação:</label>
+                        <br>
+                        <textarea style= "resize: none" id="Descricao" name="Descricao" rows="5" cols="50" maxlength="150" required></textarea>
+                        <br><br>
+                        <span>Adionar Fotos (opcional):</span>
+                        <input type='file' accept='image/*' id='file-input' capture name="Anexar_Imagem"/>
+                        <br><br>
+                        <input type="submit" value="Enviar" id="Botao_Enviar"/>
+                    </form>
+                </div>
+
+            </section>
+        </div>
+
+     </header>
+    <footer>&copy;2024 - Todos os direitos reservados!</footer>
+</body>
+</html>

@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Inter:wght@100..600&display=swap" rel="stylesheet');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  background-color: ;
+  font-family: "Inter", sans-serif;
+  overflow: auto;
+}
+
+body{
+    background-color: ;
+}
+
+section {
+  padding: 20px 0;
+  background-color: ;
+  overflow: auto; 
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  color: black;
+  overflow: auto;
+}
+
+p {
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  padding-top: 0;
+  overflow: auto;
+}
+
+.menu {
+  margin: 20px;
+  padding: auto;
+  overflow: auto;
+  background-color: ;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  overflow: auto;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  overflow: auto;
+
+}
+
+nav ul a {
+  color: black;
+  margin: 0 20px;
+  text-transform: uppercase;
+  font-size: 25px;
+  display: block;
+  font-weight: bold;
+  overflow: auto;
+}
+
+img {
+  padding: 10px;
+  overflow: auto;
+}
+
+footer {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: rgb(237, 255, 254);
+}
+
+input {
+  border-radius: 4px;
+}
+
+textarea {
+  border-radius: 4px;
+}
+
+form {
+  text-align: center;
+  font-weight: bold;
+}
+
+input#Botao_Enviar {
+  font-weight: ;
+  
+}
