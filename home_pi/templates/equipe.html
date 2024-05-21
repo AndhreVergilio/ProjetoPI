@@ -1,0 +1,60 @@
+{% extends 'main.html' %}
+{% block 'titulo' %} Equipe {% endblock %}
+
+
+
+<!-- Reparar se esse conteudo já está em uso -->
+{% block conteudo %}
+<div class="container py-5 text-center">
+    <div class="container-fluid py-5">
+        <div class="row">
+            <!-- Membro da equipe 1 -->
+            <div class="col-md-4">
+                <img src="../static/img/img-Andhre.png" class="rounded-circle img-fluid" alt="Membro da equipe 1"
+                    width="100px" height="#">
+                <h3>Andhre Vergilio Faro Silva</h3>
+                <p-eqp>Estudante de Engenharia da computação. Polo Azul da cor do Mar</p-eqp>
+            </div>
+            <!-- Membro da equipe 2 -->
+            <div class=" col-md-4">
+                <img src="../static/img/img-Marcos.jpeg" class="rounded-circle img-fluid"
+                    alt="Imagem do membro da equipe" width="100px" height="#">
+                <h3>Marcos Daniel Reginaldo</h3>
+                <p-eqp class="p-ep">Estudante de Engenharia da Computação. Polo Quinta do Sol.</p-eqp>
+            </div>
+            <!-- Membro da equipe 3 -->
+            <div class="col-md-4">
+                <img src="../static/img/ikm-Kika.png" class="rounded-circle img-fluid" alt="Membro da equipe 3"
+                    width="100px" height="#">
+                <h3>Marília Cristina oliveira </h3>
+                <p-eqp>Estudante Tecnologia da informação.<br> Polo Vila Curuça.</p-eqp>
+            </div>
+        </div>
+        <div class="row py-5">
+            <!-- Membro da equipe 4 -->
+            <div class="col-md-4">
+                <img src="../static/img/indefinido.png" class="rounded-circle img-fluid" alt="Membro da equipe 4"
+                    width="100px" height="#">
+                <h3>Andre Salles</h3>
+                <p-eqp>Polo Freguesia do Ó.</p-eqp>
+            </div>
+            <!-- Membro da equipe 5 -->
+            <div class="col-md-4">
+                <img src="../static/img/img-Andersom.jpeg" class="rounded-circle img-fluid" alt="Membro da equipe 5"
+                    width="100px" height="#">
+                <h3>Anderson Veloso Gomes</h3>
+                <p-eqp>Estudante de Ciência de dados. <br>Polo Navegantes.</p-eqp>
+            </div>
+            <!-- Membro da equipe 6 -->
+            <div class="col-md-4">
+                <img src="../static/img/indefinido.png" class="rounded-circle img-fluid" alt="Membro da equipe 5"
+                    width="100px" height="#">
+                <h3>Malcom Jorge</h3>
+                <p-eqp>Estudante de Engenharia da Computação. Polo Vila Rubi</p-eqp>
+            </div> 
+        </div>
+
+    </div>
+    {% block 'footer' %}
+    {% endblock %}
+    {% endblock %}

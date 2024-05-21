@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Inter:wght@100..600&display=swap" rel="stylesheet');
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  overflow: auto;
+}
+
+
+body {
+  background: #00557f;
+}
+
+section {
+  color: black; 
+  padding: 16px 0; 
+  overflow: auto;
+  background-color: #DEB887;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  color: #D2691E;
+  overflow: auto;
+}
+
+p {
+  font-size: 20px;
+  text-align: center;
+  color: whitesmoke;
+  padding-top: 0;
+  overflow: auto;
+} 
+
+.menu {
+  margin: 20px;
+  padding: auto;
+  overflow: auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  overflow: auto;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  overflow: auto;
+
+}
+
+nav ul a {
+  color: rgb(230, 153, 11);
+  margin: 0 20px;
+  text-transform: uppercase;
+  font-size: 25px;
+  display: block;
+  font-weight: bold;
+  overflow: auto;
+}
+
+img {
+  padding: 0px;
+  overflow: auto;
+
+}
+
+footer {
+  position:fixed ; 
+  padding: 15px; 
+  bottom: 0; 
+  width: 100%; 
+  height: 3.5rem; 
+  text-align: center; 
+  font-size: 15px; 
+  font-weight: bold; 
+  background-color: #050a0c;
+  color: aliceblue;
+}
+
+input {
+  border-radius: 4px;
+}
+
+textarea {
+  border-radius: 4px;
+}
+
+form {
+  text-align: center;
+  font-weight: bold;
+}
+
+input#Botao_Enviar {
+  font-weight: bold;
+
+}
+
+/* CSS Login */
+
+
+
+.divider:after,
+.divider:before {
+
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: Gainsboro;
+}
+
+/* .h-custom {
+   height: calc(100% - 73px); 
+}
+
+ @media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}  */
+
+/* Página dos Membros */
+
+.img-fluid {
+  margin-bottom: 20px;
+  max-width: 100%;
+  height: auto;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+
+h3 {
+  margin-top: 10px;
+}
+
+p-eqp {
+  font-size: 16px;
+  color: aliceblue;
+}
