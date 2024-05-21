@@ -1,0 +1,62 @@
+{% extends 'main.html' %}
+{% block 'titulo' %} Cadastro {% endblock %}
+
+{% block conteudo %}
+{% block navbar %} {% endblock %}
+
+<div class="container">
+  <div class="container px-4 py-5 px-sm-5 text-center text-lg-start my-5">
+    <div class="row gx-lg-5 align-items-center mb-5">
+      <div class="col-lg-3 mb-5 mb-lg-0" style="z-index: 10"></div>
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+        <div class="card bg-glass">
+          <div class="card-body px-4 py-5 px-md-5">
+            <div class="divider d-flex align-items-center my-4">
+              <h2 class="text-center fw-bold mx-3 mb-0">Sistema Cadastro</h2>
+            </div>
+            <!-- store -->
+            <form method="POST" action="/bcoDado/">
+              {% if msg %}
+              <div class="alert {{class}}">
+                {{msg}}
+              </div>
+              {% endif %}
+              {% csrf_token %}
+              <!-- nome input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input name="nome" id="#" class="form-control" placeholder="name" required />
+                <label class="form-label" for="#"></label>
+              </div>
+
+              <!-- Email input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input name="email" id="#" class="form-control" placeholder="Email address" required />
+                <label class="form-label" for="#"></label>
+              </div>
+
+              <!-- Password input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="password" name="password" id="#" class="form-control" placeholder="Password" required />
+                <label class="form-label" for="#"></label>
+              </div>
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="password" name="password-conf" id="#" class="form-control" placeholder="Repeat password"
+                  required />
+                <label class="form-label" for="#"></label>
+              </div>
+
+              <!-- Submit button -->
+              <input class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem; margin-right: 60px;" type="submit" value="Enviar">
+              <a href="/login/" style="padding-left: 3.5rem; padding-right: 4.5rem;"
+                class="btn btn-warning btn-lg">Login</a>
+            </form>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+{% block 'footer' %}
+{% endblock %}
+{% endblock %} 

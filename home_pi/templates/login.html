@@ -1,0 +1,74 @@
+{% extends 'main.html' %}
+
+{% block 'titulo' %} Login {% endblock %}
+
+
+
+{% block conteudo %}
+<div class="container-fluid px-4 py-5 px-md-5 text-center text-lg-start my-5">
+  <div class="row gx-lg-5 align-items-center mb-5 py-5">
+    <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+      <h1 class="my-5 display-4 ls-tight" style="color: hsl(218, 81%, 95%)">
+        The best App <br />
+        <span style="color: hsl(218, 81%, 75%)">Web denúncia</span>
+      </h1>
+      <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+        Prensenciou descarte inlegal de lixo, Agora você pode denúncia.
+        Totamente sigiloso, seguro e anônimo.
+      </p>
+    </div>
+
+     <div class="col-lg-6 mb-mb-lg-0 position-relative"> 
+      <div class="card bg-glass">
+        <div class="card-body px-4 py-4 px-md-5">
+          <div class="divider d-flex align-items-center my-4">
+            <h2 class="text-center fw-bold mx-3 mb-0">Login</h2>
+          </div>
+
+          <form name="formLogin" id="formLogin" method="POST" action="/dologin/">
+            {% if msg %}
+            <div class="alert {{class}}">
+              {{msg}}
+            </div>
+            {% endif %}
+            {% csrf_token %}
+            <!-- Email input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+              <input type="email" name="email" id="#" class="form-control" placeholder="Email address" required />
+              <label class="form-label" for="#"></label>
+            </div>
+
+            <!-- Password input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+              <input type="password" name="password" id="#" class="form-control" placeholder="Password" required />
+              <label class="form-label" for="#"></label>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Checkbox -->
+              <div class="form-check mb-0">
+                <input class="form-check-input me-2" type="checkbox" value="" id="#" />
+                <label class="form-check-label" for="#">
+                  Remember me
+                </label>
+              </div>
+              <a href="#!" class="text-body">Forgot password?</a>
+            </div>
+
+            <!-- Submit button -->
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <input class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" type="submit"
+                value="Entrar">
+              <p class="small fw-bold mt-2 pt-1 mb-0 text-secondary">Don't have an account? <a href="/cadastro/"
+                  class="link-danger">Register</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% block 'footer' %}
+{% endblock %}
+{% endblock %}
