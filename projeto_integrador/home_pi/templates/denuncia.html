@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Stylesheet.css' %}">
+    <title>Projeto Integrador</title>
+</head>
+<body>
+    
+    <header class="header">
+        
+        <div class="voltar">
+            <a href="http://127.0.0.1:8000/">
+                <img src="{% static 'img/icone voltar.png' %}" alt="voltar">
+            </a>
+        </div>
+          <div class="header_interno">
+            
+        <div class="logo">
+            <a href="http://127.0.0.1:8000/">
+                <img src="{% static 'img/img_logo.png' %}" alt="Logo">
+            </a>
+        </div>
+        <section class="hero">
+            <h1>Olá! Sejam bem-vindos!</h1>
+            <p>Para realizar sua denúncia, preencha os campos abaixo.</p>
+        </section>
+    </div>
+    </header>
+    
+    <div class="container">
+       
+        <div class="formulario">
+            <form id="denunciaForm" action="{% url 'home' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="Nome" style="color: #007bff;">Nome:</label>
+                    <input type="text" id="Nome" name="Nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="Localizacao" style="color: #007bff;">Localização:</label>
+                    <input type="text" id="Localizacao" name="Localizacao" required>
+                </div>
+                
+                <!-- Fieldset para Tipo de Lixo -->
+                <fieldset>
+                    <legend style="color: #007bff;">Tipo de Lixo:</legend>
+                    <div class="radio-group">
+                        <label><input type="radio" id="Construcao_ID" name="Opcao" value="Construcao_Value" required> Construção</label>
+                        <label><input type="radio" id="Domestico_ID" name="Opcao" value="Domestico_Value" required> Doméstico</label>
+                        <label><input type="radio" id="Entulho_ID" name="Opcao" value="Entulho_Value" required> Entulho</label>
+                        <label><input type="radio" id="Outros_ID" name="Opcao" value="Outros_Value" required> Outros</label>
+                    </div>
+                </fieldset>
+                
+                <div class="form-group">
+                    <label for="Descricao" style="color: #007bff;">Descrição da Situação:</label>
+                    <textarea id="Descricao" name="Descricao" rows="5" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="file-input">Adicionar Fotos (opcional):</label>
+                    <input type='file' accept='image/*' id='file-input' name="Anexar Imagem"/>
+                </div>
+                
+                <input type="submit" value="Enviar" class="submit-button"/>
+            </form>
+        </div>
+        
+    </div>
+    <footer class="footer ">
+        &copy;2024 - Todos os direitos reservados!
+    </footer>
+
+    <script>
+        document.getElementById('denunciaForm').addEventListener('submit', function(event) {
+            // Evitar o envio padrão do formulário
+            event.preventDefault();
+
+            // Validação do formulário
+            const nome = document.getElementById('Nome').value;
+            const localizacao = document.getElementById('Localizacao').value;
+            const descricao = document.getElementById('Descricao').value;
+            const opcaoSelecionada = document.querySelector('input[name="Opcao"]:checked');
+
+            if (nome && localizacao && descricao && opcaoSelecionada) {
+                // Exibir alerta de sucesso
+                alert('Formulário enviado com sucesso!');
+
+                // Enviar o formulário
+                this.submit(); 
+            } else {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+            }
+        });
+    </script>
+</body>
+</html>

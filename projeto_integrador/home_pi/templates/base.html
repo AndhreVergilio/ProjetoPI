@@ -1,69 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-{% load static %} {# LOADER DO JINJA NECESSARIO PARA IMPORTAR ARQUIVOS STATICOS PARA HTML EM DJANGO #}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="Stylesheet" href="{% static 'css/Stylesheet.css' %}">
-    <title>Projeto Integrador</title>
+    <title>Descarta Sampa</title>
+    {% load static %}
+    <!-- Incluindo Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
 </head>
 <body>
-    <!-- cabeçalho com logo e guia "home" "sobre" "history"-->
-     <header style='background-image: img ; background-repeat: no-repeat; background-size: cover;'> {# O IMPORT DA IMAGEM DE FUNDO PRECISA SER MODIFICADA PARA FUNCIONAR COM O JINJA #}
-        <!-- Menu da página-->
-        <div class="menu">
-            <nav>
-                <!-- Logotipo ao clicar, redireciona para página principal-->
-                <a href="http://127.0.0.1:8000/">
-                    <img src="{% static 'img/img_logo.png' %}" alt="Logo" width="130px" height="120px">
-                </a>
-                <!-- Título atalho para outra página-->
-                <ul class="ul">
-                    <!--<a href="index.html" >Home</a>
-                    <a href="sobre.html">Home</a>
-                    <<a href="historia.html">História</a>-->
-                </ul>
-            </nav>
-            <section class="Frase Sejam Bem-vindos!">
-                <div class="Frase">
-                    <h1>Olá! Sejam bem vindos!</h1>
-                    <p>Para realizar sua denúncia, preencha os campos abaixo.</p>
-                </div>
-            </section>
-            <section class="formulario">
-                <div>
-                    <form action="{% url 'home' %}" method="post">
-                        {% csrf_token %}
-                        <label for="Nome">Nome:</label>
-                        <input type="text" id="Nome" name="Nome" required>
-                        <br><br>
-                        <div>
-                            <label for="Localizacao">Localização:</label>
-                            <input type="text" id="Localizacao" name="Localizacao" required>
-                            <br><br>
-                        </div>
-                        <span>Tipo de Lixo:</span>
-                                <input type="radio" id="Construcao_ID" name="Opcao" value="Construcao_Value" required><label for="Construcao">Construção</label>
-                                <input type="radio" id="Domestico_ID" name="Opcao" value="Domestico_Value" required><label for="Domestico">Doméstico</label>
-                                <input type="radio" id="Entulho" name="Opcao" value="Entulho_Value" required><label for="Domestico">Entulho</label>
-                                <input type="radio" id="Outros_ID" name="Opcao" value="Outros_Value" required><label for="Domestico">Outros</label>
-                                <br><br>
-                        <label for="Descricao">Descrição da Situação:</label>
-                        <br>
-                        <textarea style= "resize: none" id="Descricao" name="Descricao" rows="5" cols="50" maxlength="150" required></textarea>
-                        <br><br>
-                        <span>Adionar Fotos (opcional):</span>
-                        <input type='file' accept='image/*' id='file-input' capture name="Anexar Imagem"/>
-                        <br><br>
-                        <input type="submit" value="Enviar" id="Botao_Enviar"/>
-                    </form>
-                </div>
 
-            </section>
+<!-- Banner principal -->
+<section class="banner text-center">
+    <div class="container">
+        <h1 class="display-4 font-weight-bold">Denuncie o Descarte Ilegal de Lixo</h1>
+        <p class="lead">Ajude a combater o impacto ambiental do descarte irregular de lixo e entulho na cidade de São Paulo.</p>
+        <a href="{% url 'denuncia' %}" class="btn btn-primary btn-lg">Denunciar Descarte Ilegal</a>
+    </div>
+</section>
+
+<!-- Seção de informações sobre o problema -->
+<div class="container">
+    <p class="lead text-center py-5">
+      Nossa equipe é formada por alunos da <strong><em>Univesp</em></strong>, comprometidos com a responsabilidade ambiental e social. Desenvolvemos esta plataforma para facilitar a denúncia do descarte irregular de lixo na cidade de São Paulo, promovendo uma cidade mais limpa e sustentável para todos.
+    </p>
+  </div>
+  
+  
+  
+<section class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{% static 'img/descarte.png' %}" alt="Imagem de descarte ilegal" class="img-fluid rounded">
         </div>
+        <div class="col-md-6">
+            <h2 class="h4 font-weight-bold text-primary">O Problema do Descarte Ilegal</h2>
+            <p>O descarte ilegal de lixo e entulho é um dos principais problemas ambientais nas cidades modernas. Esse tipo de ação causa poluição do solo, contaminação de cursos d'água e afeta diretamente a saúde pública, além de criar um ambiente propício para pragas.</p>
+            <p>Ao reportar esses incidentes, você ajuda a preservar o meio ambiente e a garantir que todos vivam em uma cidade mais limpa e saudável.</p>
+        </div>
+    </div>
+</section>
 
-     </header>
-    <footer>&copy;2024 - Todos os direitos reservados!</footer>
+<!-- Seção de consequências do descarte ilegal -->
+<section class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center text-primary font-weight-bold mb-4">Consequências do Descarte Ilegal</h2>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="{% static 'img/lixo_rua.jpg' %}" alt="Imagem de descarte ilegal" alt="Poluição do solo" class="img-fluid rounded-circle mb-3">
+                <h3 class="h5">Poluição do Solo</h3>
+                <p>Resíduos contaminantes afetam o solo e prejudicam a fauna e flora locais, causando danos a longo prazo ao meio ambiente.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="{% static 'img/saude_publica.jpg' %}" alt="Imagem de descarte ilegal" class="img-fluid rounded-circle mb-3">
+                <h3 class="h5">Saúde Pública</h3>
+                <p>O acúmulo de lixo atrai pragas e vetores de doenças, colocando em risco a saúde da população.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="{% static 'img/contamina_agua.png' %}" alt="Imagem de descarte ilegal" class="img-fluid rounded-circle mb-3">
+                <h3 class="h5">Contaminação de Águas</h3>
+                <p>O descarte inadequado pode contaminar rios e lençóis freáticos, afetando o abastecimento de água e a qualidade de vida.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção de chamada para ação -->
+<section class="container text-center my-5">
+    <h2 class="text-primary font-weight-bold">Faça a sua parte!</h2>
+    <p class="lead">Denunciar é rápido, fácil e faz toda a diferença. Ajude a combater o descarte irregular de lixo.</p>
+    <a href="{% url 'denuncia' %}" class="btn btn-success btn-lg">Faça uma Denúncia Agora</a>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Portal de Denúncia. Todos os direitos reservados.</p>
+</footer>
+
+<!-- Bootstrap JS e dependências -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

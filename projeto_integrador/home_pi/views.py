@@ -23,3 +23,8 @@ def home (request):
             temp.save()
 
     return HttpResponse(template.render()) 
+
+def denuncia(request):
+    template = loader.get_template('denuncia.html')
+    return HttpResponse(template.render()) 
+    

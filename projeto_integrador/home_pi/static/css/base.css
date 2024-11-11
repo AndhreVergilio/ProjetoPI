@@ -1,0 +1,11 @@
+.banner {
+    background-image: url("../img/painel_home.png"); 
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+}
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
